@@ -1,0 +1,13 @@
+OAuth 2.0 vs. OpenID Connect
+
+For API security there are two standards and both of their names start with the capital letter O. So it is no wonder, people ask all the time: What is the difference between OAuth 2 and OpenID Connect?
+
+The OAuth standard ensures that there is no unintended leakage of information about the resource owner to the app. The app may access only specific resources with the explicit consent of the resource owner. The app does not get the resource owner's credentials, which would be wildcard access to all of the user's data. By protecting the resource owner's data, especially the personal and profile data of the resource owner, the OAuth standard can be used to ensure the privacy of the resource owner.
+
+The strict privacy policy of OAuth is a good default setting. There are, however, cases in which the resource owner wants that the identity provider hands specific data of a resource owner, for example, the resource owner's name or address, to a specific app, i.e. for a smooth sign-up and login experience. Of course, the access right to this information is only provided, if the resource owner explicitly consents to the delegation of the respective access rights to the app.
+
+OpenID Connect standardizes how apps can access the attributes of the resource owner via a token and via a RESTful API and how this data is structured and organized. OpenID Connect extends the authorization code flow, introduces new tokens and standardizes some endpoints. OpenID Connect is a solution that can be applied in many environments, on many devices, and with many different products. OpenID Connect is realized as an extension of OAuth, as a so-called OAuth profile. OAuth profiles are a standardized mechanism to build upon the main OAuth standard.
+
+Common Misunderstanding: We already got OAuth, so we don't need OpenID Connect
+
+Great, that you have OAuth. If you have it long enough, you probably have a big API portfolio and have very likely come across the need to expose customer data, employee data or partner data. So you wrote one or multiple APIs to deliver person attributes. The Person API - every company creates an API with data about the people it deals with. Sometimes this API is called a customer API, an employee API, a user API or a me API. This API delivers data about a person not about any person but just about the person that is currently logged in. This API delivers identity information, including the name, the email address and a profile picture. One aspect of OpenID Connect is the attempt to standardize this kind of API. In OpenID Connect this standardized API is called userinfo API.
